@@ -6,6 +6,7 @@ import { FaTelegram, FaXTwitter } from "react-icons/fa6";
 import { ExperienceItem } from "./components/ExperienceItem";
 import { GithubGraph } from "./components/GithubGraph";
 import { TechStack } from "./components/TechStack";
+import { ProjectCard } from "./components/ProjectCard";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
@@ -315,6 +316,36 @@ export default function Home() {
                 I&apos;m a Technically well. In this skill&apos;s the core stack I&apos;ve spent the most time with:
               </p>
               <TechStack />
+            </div>
+
+            {/* Projects Section */}
+            <div className="mb-16 w-full text-left">
+              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+                Featured Projects
+              </h2>
+              <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+                <ProjectCard
+                  title="Portfolio Website"
+                  description="A modern, minimalist portfolio website built with Next.js 15, featuring dark mode, GitHub contributions graph, and interactive UI elements with smooth animations."
+                  techStack={["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]}
+                  githubUrl="https://github.com/Priyanshubhartistm/pb-portfolio"
+                  liveUrl="https://priyanshu-bharti.vercel.app"
+                />
+                <ProjectCard
+                  title="Cryptoverse - Cryptocurrency Tracker"
+                  description="Real-time cryptocurrency tracking app with live prices, market caps, and trading volumes. Features advanced search, interactive charts with multiple time ranges, exchange insights, latest crypto news, and a beautiful responsive UI with smooth animations."
+                  techStack={["React", "JavaScript", "CSS", "Crypto API"]}
+                  githubUrl="https://github.com/Priyanshubhartistm/Cryptocurrency-App"
+                  liveUrl="https://priyanshubhartistm.github.io/"
+                />
+                <ProjectCard
+                  title="Juice🍊Factory Website"
+                  description="A static web project showcasing creative frontend design with smooth animations and responsive layouts. Built to demonstrate modern web design principles with a fruit-themed juice factory concept."
+                  techStack={["HTML", "CSS", "JavaScript"]}
+                  githubUrl="https://github.com/Priyanshubhartistm/juice-factory"
+                  liveUrl="https://priyanshubhartistm.github.io/juice-factory/"
+                />
+              </div>
             </div>
   
 

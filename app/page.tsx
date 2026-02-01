@@ -329,14 +329,14 @@ export default function Home() {
                   description="A modern, minimalist portfolio website built with Next.js 15, featuring dark mode, GitHub contributions graph, and interactive UI elements with smooth animations."
                   techStack={["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]}
                   githubUrl="https://github.com/Priyanshubhartistm/pb-portfolio"
-                  liveUrl="https://priyanshu-bharti.vercel.app"
+                  liveUrl="https://pb-portfolio-black.vercel.app/"
                 />
                 <ProjectCard
                   title="Cryptoverse - Cryptocurrency Tracker"
                   description="Real-time cryptocurrency tracking app with live prices, market caps, and trading volumes. Features advanced search, interactive charts with multiple time ranges, exchange insights, latest crypto news, and a beautiful responsive UI with smooth animations."
                   techStack={["React", "JavaScript", "CSS", "Crypto API"]}
                   githubUrl="https://github.com/Priyanshubhartistm/Cryptocurrency-App"
-                  liveUrl="https://priyanshubhartistm.github.io/"
+                  liveUrl="https://priyanshubhartistm.github.io/Cryptocurrency-App/"
                 />
                 <ProjectCard
                   title="Juice🍊Factory Website"

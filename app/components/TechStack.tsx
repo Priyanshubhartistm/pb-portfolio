@@ -21,8 +21,7 @@ const categories = [
             { name: "React", slug: "react" },
             { name: "Next.js", slug: "nextdotjs" },
             { name: "Tailwind CSS", slug: "tailwindcss" },
-            { name: "Shadcn UI", slug: "shadcnui" },
-            { name: "Framer Motion", slug: "framer" },
+            
         ]
     },
     {
@@ -49,11 +48,19 @@ const categories = [
         ]
     },
     {
-        name: "AI & ML",
+        name: "Blockchain",
         skills: [
-            { name: "Hugging Face", slug: "huggingface" },
-            { name: "PyTorch", slug: "pytorch" },
-            { name: "Pandas", slug: "pandas" },
+            { name: "Ethereum", slug: "ethereum" },
+            { name: "Solidity", slug: "solidity" },
+            { name: "Web3.js", slug: "web3dotjs" },
+        ]
+    },
+    {
+        name: "Operating Systems",
+        skills: [
+            { name: "Windows", slug: "windows" },
+            { name: "Linux", slug: "linux" },
+            { name: "Ubuntu", slug: "ubuntu" },
         ]
     }
 ];

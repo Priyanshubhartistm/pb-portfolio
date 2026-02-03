@@ -240,7 +240,7 @@ export default function Home() {
                   title="Open Source "
                   role="Contributor"
                   collapsible={true}
-                  link="https://github.com/Priyanshubhartistm?from=2025-12-01&to=2025-12-31&org=PalisadoesFoundation&year_list=1"
+                  link="https://github.com/PalisadoesFoundation/talawa-admin/pulls?q=is%3Apr+author%3APriyanshubhartistm+is%3Aclosed"
                 >
                   <div className="space-y-2">
                     <p>Contributed to large-scale open-source projects by resolving real-world issues.</p>

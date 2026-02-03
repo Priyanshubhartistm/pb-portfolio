@@ -241,6 +241,7 @@ export default function Home() {
                   role="Contributor"
                   collapsible={true}
                   link="https://github.com/PalisadoesFoundation/talawa-admin/pulls?q=is%3Apr+author%3APriyanshubhartistm+is%3Aclosed"
+                  
                 >
                   <div className="space-y-2">
                     <p>Contributed to large-scale open-source projects by resolving real-world issues.</p>

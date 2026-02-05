@@ -337,7 +337,7 @@ export default function Home() {
                   description="Real-time cryptocurrency tracking app with live prices, market caps, and trading volumes. Features advanced search, interactive charts with multiple time ranges, exchange insights, latest crypto news, and a beautiful responsive UI with smooth animations."
                   techStack={["React", "JavaScript", "CSS", "Crypto API"]}
                   githubUrl="https://github.com/Priyanshubhartistm/Cryptocurrency-App"
-                  liveUrl="https://priyanshubhartistm.github.io/Cryptocurrency-App/"
+                  liveUrl="https://priyanshubhartistm.github.io/Cryptocurrency-Tracker/"
                 />
                 <ProjectCard
                   title="Juice🍊Factory Website"

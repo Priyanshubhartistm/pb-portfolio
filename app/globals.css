@@ -24,6 +24,34 @@ body {
   font-family: var(--font-dm-sans), sans-serif;
 }
 
+.cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background: radial-gradient(
+    500px circle at var(--cursor-x, 50%) var(--cursor-y, 50%),
+    rgba(124, 58, 237, 0.28),
+    transparent 60%
+  );
+  transition: background 120ms ease;
+}
+
+.dark .cursor-spotlight {
+  background: radial-gradient(
+    520px circle at var(--cursor-x, 50%) var(--cursor-y, 50%),
+    rgba(168, 85, 247, 0.24),
+    transparent 62%
+  );
+}
+
+@media (pointer: coarse) {
+  .cursor-spotlight {
+    display: none;
+  }
+}
+
 @keyframes infinite-scroll {
   from {
     transform: translateX(0);

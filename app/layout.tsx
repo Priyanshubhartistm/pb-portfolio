@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./providers";
+import { CursorSpotlight } from "./components/CursorSpotlight";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({
         className={`${dmSans.variable} antialiased transition-colors duration-300`}
       >
         <ThemeProvider>
+          <CursorSpotlight />
           {children}
         </ThemeProvider>
       </body>

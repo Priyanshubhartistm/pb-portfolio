@@ -9,6 +9,14 @@ Building impactful digital solutions with focus on full-stack development, block
 
 ## Experience
 
+### Summer of Bitcoin
+**Developer**, May 2024 - August 2024
+Contributed as a developer to open-source Bitcoin projects under the Summer of Bitcoin program.
+Worked on real-world Bitcoin/Lightning Network codebases, gaining hands-on experience with blockchain protocols.
+Collaborated with experienced Bitcoin Core developers and the global open-source community.
+Submitted and reviewed code contributions following industry-standard Git workflows and open-source best practices.
+Gained deep understanding of Bitcoin's architecture, cryptography, and decentralized systems.
+
 ### Open Source [link](https://github.com/PalisadoesFoundation/talawa-admin/pulls?q=is%3Apr+author%3APriyanshubhartistm+is%3Aclosed) Contributor
 Successfully merged 23+ pull requests in real-world open-source projects.
 Contributed to large-scale projects by resolving real-world issues including bug fixes, UI improvements, and feature enhancements.
@@ -38,7 +46,7 @@ Collaborated with cross-functional teams to ensure successful project execution 
 
 ## Education
 
-### DR.C.V.RAMAN UNIVERSITY, BIHAR, INDIA
+### Dr. C.V. Raman University
 **Bachelor of Technology in Computer Science and Engineering**
 2024 - current
 
@@ -67,7 +75,7 @@ Connect with me on [LinkedIn](https://www.linkedin.com/in/priyanshu-bharti-44182
 - GitHub: [https://github.com/Priyanshubhartistm](https://github.com/Priyanshubhartistm)
 - LinkedIn: [https://www.linkedin.com/in/priyanshu-bharti-441823229/](https://www.linkedin.com/in/priyanshu-bharti-441823229/)
 - Twitter: [https://x.com/PriyanshuB74940](https://x.com/PriyanshuB74940)
-- Telegram: [https://t.me/Arohi_280](https://t.me/Arohi_280)
+- Telegram: [https://t.me/priyanshu123bharti](https://t.me/priyanshu123bharti)
 - Discord: [https://discord.gg/aarohi04462](https://discord.gg/aarohi04462)
 - Calendar: [https://cal.com/priyanshu-bharti-oubnjc](https://cal.com/priyanshu-bharti-oubnjc)
 `;

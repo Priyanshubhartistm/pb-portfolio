@@ -84,6 +84,30 @@ export default function Home() {
     }));
   }, []);
 
+  const sectionMotion = {
+    initial: { opacity: 0, y: 24 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.2 },
+    transition: { duration: 0.6, ease: "easeOut" },
+  };
+
+  const projectStagger = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12 },
+    },
+  };
+
+  const projectItem = {
+    hidden: { opacity: 0, y: 16 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.45, ease: "easeOut" },
+    },
+  };
+
   return (
     <div className={`relative flex min-h-screen flex-col items-center bg-white dark:bg-black px-3 pt-16 text-black dark:text-white selection:bg-black dark:selection:bg-white selection:text-white dark:selection:text-black pb-32 sm:px-4 sm:pt-24 sm:pb-40 overflow-x-hidden transition-colors duration-300`}>
       {/* Easter Egg Effects */}
@@ -134,27 +158,37 @@ export default function Home() {
       </div>
 
       <motion.main
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
+        transition={{ duration: 0.8, ease: "easeOut", staggerChildren: 0.1 }}
         className="flex w-full max-w-2xl flex-col items-center text-center"
       >
             {/* Profile Image */}
-            <div className="relative mb-2 h-40 w-40 grayscale filter sm:h-56 sm:w-56">
+            <motion.div 
+               initial={{ scale: 0.8, opacity: 0 }}
+               animate={{ scale: 1, opacity: 1 }}
+               transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
+               className="relative mb-2 h-40 w-40 filter hover:grayscale-0 transition-all duration-500 sm:h-56 sm:w-56"
+            >
               <Image
                 src="/me.png"
                 alt="Profile"
                 fill
-                className="object-contain"
+                className="object-contain drop-shadow-2xl"
                 priority
               />
               <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white via-white/60 to-transparent dark:from-black dark:via-black/60 backdrop-blur-[1px]" />
-            </div>
+            </motion.div>
 
             {/* Hero Text */}
-            <h1 className="mb-4 text-5xl font-bold tracking-tight sm:text-7xl">
+            <motion.h1 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-4 text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 hover:from-indigo-500 hover:to-pink-500 transition-all duration-500 sm:text-7xl"
+            >
               Priyanshu Bharti
-            </h1>
+            </motion.h1>
 
             {/* Phonetic Pronunciation (Aesthetic touch often found in minimal portfolios) */}
             <div className="mb-8 flex flex-wrap items-center justify-center gap-2 text-xs text-gray-400 dark:text-gray-500 sm:text-sm">
@@ -203,67 +237,88 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mb-10 w-full space-y-4 text-left text-base leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg md:text-xl">
+            <motion.div 
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               transition={{ delay: 0.4 }}
+               className="mb-10 w-full space-y-4 text-left text-base leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg md:text-xl"
+            >
               <p>
-                a full-stack developer and <a href="" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-black dark:hover:text-white transition-colors">cloud</a> with deep experience in open source.
+                A full-stack developer and <a href="" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-indigo-500 transition-colors">cloud enthusiast</a> with deep experience in open source.
               </p>
               <p>
                 I love building products that solve real problems and make people's lives easier. 
-                <b> Building scalable web applications with full-stack and blockchain technologies. 
-</b>       
+                <b className="text-gray-900 dark:text-white"> Building scalable web applications with full-stack and blockchain technologies. </b>       
               </p>
-            
-            </div>
+            </motion.div>
 
             {/* Education Section */}
-            <div className="mb-16 w-full text-left">
-              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.5 }}
+               className="mb-16 w-full text-left"
+            >
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                 Education
               </h2>
               <div className="space-y-12">
                 <ExperienceItem
-                  title="DR.C.V.RAMAN UNIVERSITY, BIHAR, INDIA"
+                  title="Dr. C.V. Raman University"
                   role="Bachelor of Technology in Computer Science and Engineering"
                 >
                   <p>2024 - current</p>
                 </ExperienceItem>
               </div>
-            </div>
+            </motion.div>
 
             {/* Experience Section */}
-            <div className="mb-16 w-full text-left">
-              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                 Experience
               </h2>
               <div className="space-y-12">
                 <ExperienceItem
-                  title="Open Source "
-                  role="Contributor"
+                  title="Nostream"
+                  role="Open Source Contributor"
                   collapsible={true}
-                  link="https://github.com/PalisadoesFoundation/talawa-admin/pulls?q=is%3Apr+author%3APriyanshubhartistm+is%3Aclosed"
-                  
                 >
                   <div className="space-y-2">
-                    <p>Contributed to large-scale open-source projects by resolving real-world issues.</p>
-                    <p>Worked on bug fixes, UI improvements, and feature enhancements.</p>
-                    <p>Collaborated with global developer communities using GitHub and issue-tracking workflows.</p>
-                    <p>Improved application functionality and user experience through iterative contributions.</p>
-                    <p>Successfully merged 23+ pull requests in real-world open-source projects.</p>
+                    <p>Duration: April 2026 – Present</p>
+                    <p>Working on nostream, a popular Nostr Relay written in TypeScript.</p>
+                    <p>Building features like I2P support, Redis configuration, and query optimization.</p>
+                    <p>Handling WebSocket connections and event processing for the relay.</p>
+                  </div>
+                </ExperienceItem>
 
+                <ExperienceItem
+                  title="Summer of Bitcoin"
+                  role="Developer"
+                  collapsible={true}
+                >
+                  <div className="space-y-2">
+                    <p>Duration: Feb 2026 – Current 2026</p>
+                    <p>Contributed as a developer to open-source Bitcoin projects under the Summer of Bitcoin program.</p>
+                    <p>Worked on real-world Bitcoin/Lightning Network codebases, gaining hands-on experience with blockchain protocols.</p>
+                    <p>Collaborated with experienced Bitcoin Core developers and the global open-source community.</p>
+                    <p>Submitted and reviewed code contributions following industry-standard Git workflows and open-source best practices.</p>
+                    <p>Gained deep understanding of Bitcoin's architecture, cryptography, and decentralized systems.</p>
                   </div>
                 </ExperienceItem>
 
                 <ExperienceItem
                   title="Google Cloud Arcade 2025"
-                  role="Cloud Program Facilitator, Remote"
+                  role="Cloud Program Facilitator | Remote"
                   collapsible={true}
                   link=""
                 >
                   <div className="space-y-2">
-                    <p>Guided and mentored 700+ learners globally through structured cloud learning programs.</p>
-                    <p>Facilitated hands-on labs and workshops on Google Cloud technologies.</p>
-                    <p>Provided technical support and resources to help learners achieve cloud certifications.</p>
-                    <p>Fostered a collaborative learning environment through online forums and live sessions.</p>
+                    <p>Facilitated cloud learning programs for 700+ developers, focusing on GCP services and DevOps practices.</p>
+                    <p>Conducted hands-on labs on <b>GKE, Cloud Run, Cloud Functions, and Terraform</b>.</p>
+                    <p>Mentored participants on <b>CI/CD pipelines, containerization, and infrastructure as code</b>.</p>
+                    <p>Supported learners in achieving <b>Google Cloud certifications</b> through structured guidance.</p>
+                    <p>Collaborated with global teams to improve curriculum and learning outcomes.</p>
                   </div>
                 
                 </ExperienceItem>
@@ -296,63 +351,131 @@ export default function Home() {
                   </div>
                 </ExperienceItem>
               </div>
-            </div>
+            </motion.div>
 
+            {/* Open Source Section */}
+            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+                Open Source Contributions
+              </h2>
+              <div className="space-y-12">
+                <ExperienceItem
+                  title="Web3 & Blockchain Protocol"
+                  role="Bitcoin Core, Ethereum & Nostr Ecosystem"
+                  collapsible={true}
+                >
+                  <div className="space-y-2">
+                    <p>Contributed to major open-source blockchain repositories including <b className="text-gray-800 dark:text-gray-200">bitcoin-core</b>, <b className="text-gray-800 dark:text-gray-200">go-ethereum</b>, and <b className="text-gray-800 dark:text-gray-200">btcpayserver</b>.</p>
+                    <p>Actively developed features for <b className="text-gray-800 dark:text-gray-200">nostream</b> (Nostr Relay) and privacy-focused protocols like <b className="text-gray-800 dark:text-gray-200">fedimint</b> and <b className="text-gray-800 dark:text-gray-200">robosats</b>.</p>
+                    <p>Worked on complex decentralized system architectures, I2P integrations, and Lightning Network testings.</p>
+                  </div>
+                </ExperienceItem>
+
+                <ExperienceItem
+                  title="Full-Stack & UI/UX"
+                  role="Palisadoes Foundation, Cal.com & Twenty"
+                  collapsible={true}
+                  link="https://github.com/PalisadoesFoundation/talawa-admin/pulls?q=is%3Apr+author%3APriyanshubhartistm+is%3Aclosed"
+                >
+                  <div className="space-y-2">
+                    <p>Successfully merged 23+ PRs across <b className="text-gray-800 dark:text-gray-200">talawa, talawa-api</b>, and <b className="text-gray-800 dark:text-gray-200">talawa-admin</b> by Palisadoes Foundation.</p>
+                    <p>Contributed to leading full-stack platforms like <b className="text-gray-800 dark:text-gray-200">cal.com</b> (scheduling infrastructure) and <b className="text-gray-800 dark:text-gray-200">twenty</b> (open-source CRM).</p>
+                    <p>Improved React/Next.js state management, solved responsive UI bugs, and enhanced core GraphQL/REST API features.</p>
+                  </div>
+                </ExperienceItem>
+
+                <ExperienceItem
+                  title="DevOps & Infrastructure Tools"
+                  role="Kubernetes, CI/CD pipelines & Testing"
+                  collapsible={true}
+                >
+                  <div className="space-y-2">
+                    <p>Engaged with modern DevOps tools and cloud-native infrastructure including <b className="text-gray-800 dark:text-gray-200">daytona</b>, <b className="text-gray-800 dark:text-gray-200">keploy</b>, and <b className="text-gray-800 dark:text-gray-200">microcks-cli</b>.</p>
+                    <p>Contributed to advanced container orchestrations with <b className="text-gray-800 dark:text-gray-200">kubestellar</b> and <b className="text-gray-800 dark:text-gray-200">kubeslice-controller</b>.</p>
+                    <p>Optimized Docker images, automated GitHub Actions testing workflows, and stabilized core pipeline deployments.</p>
+                  </div>
+                </ExperienceItem>
+
+                <ExperienceItem
+                  title="Documentation & Open-Source Community"
+                  role="Technical Guide & Maintainer Initiatives"
+                  collapsible={true}
+                >
+                  <div className="space-y-2">
+                    <p>Enhanced developer onboarding experiences for Data tools like <b className="text-gray-800 dark:text-gray-200">OpenMetadata</b> and <b className="text-gray-800 dark:text-gray-200">sktime</b>.</p>
+                    <p>Authored extensive markdown documentations, refined API guidelines, and created clear structures in <b className="text-gray-800 dark:text-gray-200">developer-docs</b>.</p>
+                    <p>Actively reviewed community PRs, mentored newcomers via Hacktoberfest, and resolved active technical issues.</p>
+                  </div>
+                </ExperienceItem>
+              </div>
+            </motion.div>
 
             {/* Contributions Section */}
-            <div className="mb-16 w-full text-left">
-              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                 GitHub Contributions
               </h2>
               <GithubGraph />
-            </div>
+            </motion.div>
 
 
             {/* Tech Stack Section */}
-            <div className="mb-16 w-full text-left">
-              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                 Tech Stack
               </h2>
               <p className="mb-8 text-lg text-gray-600 dark:text-gray-400">
                 I&apos;m a Technically well. In this skill&apos;s the core stack I&apos;ve spent the most time with:
               </p>
               <TechStack />
-            </div>
+            </motion.div>
 
             {/* Projects Section */}
-            <div className="mb-16 w-full text-left">
-              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                 Featured Projects
               </h2>
-              <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-                <ProjectCard
-                  title="Portfolio Website"
-                  description="A modern, minimalist portfolio website built with Next.js 15, featuring dark mode, GitHub contributions graph, and interactive UI elements with smooth animations."
-                  techStack={["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]}
-                  githubUrl="https://github.com/Priyanshubhartistm/pb-portfolio"
-                  liveUrl="https://pb-portfolio-black.vercel.app/"
-                />
-                <ProjectCard
-                  title="Cryptoverse - Cryptocurrency Tracker"
-                  description="Real-time cryptocurrency tracking app with live prices, market caps, and trading volumes. Features advanced search, interactive charts with multiple time ranges, exchange insights, latest crypto news, and a beautiful responsive UI with smooth animations."
-                  techStack={["React", "JavaScript", "CSS", "Crypto API"]}
-                  githubUrl="https://github.com/Priyanshubhartistm/Cryptocurrency-App"
-                  liveUrl="https://priyanshubhartistm.github.io/Cryptocurrency-Tracker/"
-                />
-                <ProjectCard
-                  title="Juice🍊Factory Website"
-                  description="A static web project showcasing creative frontend design with smooth animations and responsive layouts. Built to demonstrate modern web design principles with a fruit-themed juice factory concept."
-                  techStack={["HTML", "CSS", "JavaScript"]}
-                  githubUrl="https://github.com/Priyanshubhartistm/juice-factory"
-                  liveUrl="https://priyanshubhartistm.github.io/juice-factory/"
-                />
-              </div>
-            </div>
+              <motion.div
+                variants={projectStagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
+                className="grid gap-6 sm:grid-cols-1 md:grid-cols-2"
+              >
+                <motion.div variants={projectItem}>
+                  <ProjectCard
+                    title="bitcoin-prices"
+                    description="Built a real-time Bitcoin price tracker with live updates and animated UI. Shows price metrics, charts, and cards with dark/light mode support. Handles offline state and auto-retries failed API calls."
+                    techStack={["TypeScript", "React", "HTML", "CSS"]}
+                    githubUrl="https://github.com/Priyanshubhartistm/bitcoin-prices"
+                    liveUrl="https://completion-task.vercel.app/"
+                  />
+                </motion.div>
+                <motion.div variants={projectItem}>
+                  <ProjectCard
+                    title="Cryptoverse - Cryptocurrency Tracker"
+                    description="Real-time cryptocurrency tracking app with live prices, market caps, and trading volumes. Features advanced search, interactive charts with multiple time ranges, exchange insights, latest crypto news, and a beautiful responsive UI with smooth animations."
+                    techStack={["React", "JavaScript", "CSS", "Crypto API"]}
+                    githubUrl="https://github.com/Priyanshubhartistm/Cryptocurrency-App"
+                    liveUrl="https://priyanshubhartistm.github.io/Cryptocurrency-Tracker/"
+                  />
+                </motion.div>
+                <motion.div variants={projectItem}>
+                  <ProjectCard
+                    title="Juice🍊Factory Website"
+                    description="A static web project showcasing creative frontend design with smooth animations and responsive layouts. Built to demonstrate modern web design principles with a fruit-themed juice factory concept."
+                    techStack={["HTML", "CSS", "JavaScript"]}
+                    githubUrl="https://github.com/Priyanshubhartistm/juice-factory"
+                    liveUrl="https://priyanshubhartistm.github.io/juice-factory/"
+                  />
+                </motion.div>
+              </motion.div>
+            </motion.div>
   
 
             {/* Writings & Blogs Section */}
-            <div className="mb-16 w-full text-left">
-              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                 Writings & Blogs
               </h2>
               <p className="w-full text-lg leading-relaxed text-gray-600 dark:text-gray-400">
@@ -366,11 +489,11 @@ export default function Home() {
                   Medium
                 </a>{" "}
                       Write technical blogs on cloud computing and modern development topics on Medium.              </p>
-            </div>
+            </motion.div>
 
             {/* Library Section */}
-            <div className="mb-16 w-full text-left">
-              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                 Life:) My Library
               </h2>
 
@@ -404,11 +527,11 @@ export default function Home() {
               <p className="mt-6 text-xs italic text-gray-400 dark:text-gray-500">
                 *I do many more, but these are some of my favorite activities that keep me energized and inspired.
               </p>
-            </div>
+            </motion.div>
 
             {/* Thing about me Section */}
-            <div className="mb-16 w-full text-left">
-              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                 Thing about me
               </h2>
               <div className="space-y-6">
@@ -429,11 +552,11 @@ export default function Home() {
                 <p className="w-full text-lg leading-relaxed text-gray-600 dark:text-gray-400">
                         I am passionate about building scalable digital solutions and contributing to projects that create real impact. I believe curiosity and consistency are the foundation of meaningful innovation.                </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Get in Touch Section */}
-            <div className="mb-16 w-full text-left">
-              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400">
+            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                 Get in Touch
               </h2>
               <div className="space-y-4">
@@ -456,7 +579,7 @@ export default function Home() {
                   </a>
                 </p>
               </div>
-            </div>
+            </motion.div>
 
           </motion.main>
 
@@ -487,7 +610,7 @@ export default function Home() {
           <FaXTwitter className="h-5 w-5" />
         </a>
         <a
-  href="https://t.me/Arohi_280"
+  href="https://t.me/priyanshu123bharti"
   target="_blank"
   rel="noopener noreferrer"
   className="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white"

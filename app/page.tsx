@@ -295,7 +295,7 @@ export default function Home() {
                 >
                   <div className="space-y-2">
                     <p>Duration: Aug 2026 – Present · Remote</p>
-                    <p>One of 5 fellows selected across India for Bitshala&apos;s 6-month Bitcoin/Nostr open-source fellowship.</p>
+                    <p>One of 40 fellows selected across India for Bitshala&apos;s 6-month Bitcoin/Nostr open-source fellowship.</p>
                     <p>Focus: Bitcoin and Back-End Web Development.</p>
                   </div>
                 </ExperienceItem>

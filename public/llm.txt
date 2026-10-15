@@ -18,7 +18,7 @@ Handling WebSocket connections and event processing for the relay.
 
 ### Bitshala
 **Dev Fellow**, Aug 2026 - Present
-One of 5 fellows selected across India for Bitshala's 6-month Bitcoin/Nostr open-source fellowship.
+One of 40 fellows selected across India for Bitshala's 6-month Bitcoin/Nostr open-source fellowship.
 Focus: Bitcoin and Back-End Web Development.
 
 ### Summer of Bitcoin

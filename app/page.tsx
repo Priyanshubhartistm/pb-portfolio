@@ -275,27 +275,39 @@ export default function Home() {
               </h2>
               <div className="space-y-12">
                 <ExperienceItem
-                  title="Bitshala Fellowship — Nostream"
-                  role="Open Source Fellow"
+                  title="nostream"
+                  role="Software Engineer · Internship"
                   collapsible={true}
                 >
                   <div className="space-y-2">
-                    <p>Duration: April 2026 – Present</p>
-                    <p>One of 5 fellows selected across India for Bitshala&apos;s 6-month Bitcoin/Nostr open-source fellowship.</p>
-                    <p>Implementing NIP-77 (negentropy set reconciliation) for the PostgreSQL backend.</p>
+                    <p>Duration: Jul 2026 – Present · Remote</p>
                     <p>Working on nostream, a popular Nostr Relay written in TypeScript.</p>
+                    <p>Implementing NIP-77 (negentropy set reconciliation) for the PostgreSQL backend.</p>
                     <p>Building features like I2P support, Redis configuration, and query optimization.</p>
                     <p>Handling WebSocket connections and event processing for the relay.</p>
                   </div>
                 </ExperienceItem>
 
                 <ExperienceItem
-                  title="Summer of Bitcoin"
-                  role="Developer"
+                  title="Bitshala"
+                  role="Dev Fellow"
                   collapsible={true}
                 >
                   <div className="space-y-2">
-                    <p>Duration: Feb 2026 – Current 2026</p>
+                    <p>Duration: Aug 2026 – Present · Remote</p>
+                    <p>One of 5 fellows selected across India for Bitshala&apos;s 6-month Bitcoin/Nostr open-source fellowship.</p>
+                    <p>Focus: Bitcoin and Back-End Web Development.</p>
+                  </div>
+                </ExperienceItem>
+
+                <ExperienceItem
+                  title="Summer of Bitcoin"
+                  role="Developer · Internship"
+                  collapsible={true}
+                >
+                  <div className="space-y-2">
+                    <p>Duration: Feb 2026 – Aug 2026 · Remote</p>
+                    <p>Contributed to Nostream, a production-grade Nostr Relay, during the Summer of Bitcoin 2026 program.</p>
                     <p>Contributed as a developer to open-source Bitcoin projects under the Summer of Bitcoin program.</p>
                     <p>Worked on real-world Bitcoin/Lightning Network codebases, gaining hands-on experience with blockchain protocols.</p>
                     <p>Collaborated with experienced Bitcoin Core developers and the global open-source community.</p>

@@ -9,16 +9,21 @@ Contributing to Bitcoin, Lightning and Nostr infrastructure — from relays to p
 
 ## Experience
 
-### Bitshala Fellowship — Nostream
-**Open Source Fellow**, April 2026 - Present
-One of 5 fellows selected across India for Bitshala's 6-month Bitcoin/Nostr open-source fellowship.
-Implementing NIP-77 (negentropy set reconciliation) for the PostgreSQL backend.
+### nostream
+**Software Engineer · Internship**, Jul 2026 - Present
 Working on nostream, a popular Nostr Relay written in TypeScript.
+Implementing NIP-77 (negentropy set reconciliation) for the PostgreSQL backend.
 Building features like I2P support, Redis configuration, and query optimization.
 Handling WebSocket connections and event processing for the relay.
 
+### Bitshala
+**Dev Fellow**, Aug 2026 - Present
+One of 5 fellows selected across India for Bitshala's 6-month Bitcoin/Nostr open-source fellowship.
+Focus: Bitcoin and Back-End Web Development.
+
 ### Summer of Bitcoin
-**Developer**
+**Developer · Internship**, Feb 2026 - Aug 2026
+Contributed to Nostream, a production-grade Nostr Relay, during the Summer of Bitcoin 2026 program.
 Contributed as a developer to open-source Bitcoin projects under the Summer of Bitcoin program.
 Worked on real-world Bitcoin/Lightning Network codebases, gaining hands-on experience with blockchain protocols.
 Collaborated with experienced Bitcoin Core developers and the global open-source community.

@@ -3,46 +3,27 @@ export const getMarkdownContent = (time: string) => `# Priyanshu Bharti
 
 ## About
 
-A full-stack developer and cloud enthusiast with deep experience in open source contributions and building scalable web applications.
+An open-source developer building on Bitcoin and Nostr.
 
-Building impactful digital solutions with focus on full-stack development, blockchain technologies, and cloud computing.
+Contributing to Bitcoin, Lightning and Nostr infrastructure — from relays to protocol-level code.
 
 ## Experience
 
+### Bitshala Fellowship — Nostream
+**Open Source Fellow**, April 2026 - Present
+One of 5 fellows selected across India for Bitshala's 6-month Bitcoin/Nostr open-source fellowship.
+Implementing NIP-77 (negentropy set reconciliation) for the PostgreSQL backend.
+Working on nostream, a popular Nostr Relay written in TypeScript.
+Building features like I2P support, Redis configuration, and query optimization.
+Handling WebSocket connections and event processing for the relay.
+
 ### Summer of Bitcoin
-**Developer**, May 2024 - August 2024
+**Developer**
 Contributed as a developer to open-source Bitcoin projects under the Summer of Bitcoin program.
 Worked on real-world Bitcoin/Lightning Network codebases, gaining hands-on experience with blockchain protocols.
 Collaborated with experienced Bitcoin Core developers and the global open-source community.
 Submitted and reviewed code contributions following industry-standard Git workflows and open-source best practices.
 Gained deep understanding of Bitcoin's architecture, cryptography, and decentralized systems.
-
-### Open Source [link](https://github.com/PalisadoesFoundation/talawa-admin/pulls?q=is%3Apr+author%3APriyanshubhartistm+is%3Aclosed) Contributor
-Successfully merged 23+ pull requests in real-world open-source projects.
-Contributed to large-scale projects by resolving real-world issues including bug fixes, UI improvements, and feature enhancements.
-Collaborated with global developer communities using GitHub and issue-tracking workflows.
-Improved application functionality and user experience through iterative contributions.
-
-### Google Cloud Arcade 2025
-**Cloud Program Facilitator, Remote**
-Guided and mentored 700+ learners globally through structured cloud learning programs.
-Facilitated hands-on labs and workshops on Google Cloud technologies.
-Provided technical support and resources to help learners achieve cloud certifications.
-Fostered a collaborative learning environment through online forums and live sessions.
-
-### Microsoft Learn Student Ambassador (MLSA)
-**Student Technology Ambassador**
-Represented Microsoft's global student developer community by promoting technical learning and peer collaboration.
-Organized and led workshops, hackathons, and tech talks on Microsoft technologies such as Azure, .NET, and Power Platform.
-Created educational content including blog posts, tutorials, and videos to share knowledge and best practices.
-Collaborated with other student ambassadors and Microsoft teams to drive community engagement and growth.
-
-### Government Program Contributor
-**Technology & Systems Support**
-Contributed to technology-driven initiatives under a government-led digital program.
-Provided technical support for system implementations and digital transformation projects.
-Assisted in the development and deployment of digital solutions to enhance public services.
-Collaborated with cross-functional teams to ensure successful project execution and delivery.
 
 ## Education
 
@@ -52,18 +33,13 @@ Collaborated with cross-functional teams to ensure successful project execution 
 
 ## Tech Stack
 
-Next.js, React, TypeScript, Tailwind CSS, Python, JavaScript, GitHub, Git, Docker, PostgreSQL, MongoDB, Vercel, Google Cloud Platform
+Go, Python, TypeScript, JavaScript, C++, React, Next.js, Tailwind CSS, Node.js, PostgreSQL, Redis, Docker, Git, GitHub, Linux, Bitcoin, Ethereum, Solidity, Web3.js
 
-## Writings & Blogs
+## Featured Projects
 
-Write technical blogs on cloud computing and modern development topics on Medium.
-[https://medium.com/@bhartipriyanshustm](https://medium.com/@bhartipriyanshustm)
-
-## Thing About Me
-
-Outside of coding and system design, I enjoy learning through communities and real-world experiences. My journey in Computer Science has taught me the value of collaboration, open-source development, and continuous growth.
-
-I am passionate about building scalable digital solutions and contributing to projects that create real impact. I believe curiosity and consistency are the foundation of meaningful innovation.
+### Reelstr
+Open-source Pocket FM on Nostr — forkable AI-generated scenes, curated episodes, and per-episode payments in sats with signed revenue splits. Built for Bitshala's BOSS Battle 2026 hackathon.
+[https://github.com/Priyanshubhartistm/reelstr](https://github.com/Priyanshubhartistm/reelstr)
 
 ## Get in Touch
 
@@ -74,8 +50,7 @@ Connect with me on [LinkedIn](https://www.linkedin.com/in/priyanshu-bharti-44182
 **Links:**
 - GitHub: [https://github.com/Priyanshubhartistm](https://github.com/Priyanshubhartistm)
 - LinkedIn: [https://www.linkedin.com/in/priyanshu-bharti-441823229/](https://www.linkedin.com/in/priyanshu-bharti-441823229/)
-- Twitter: [https://x.com/PriyanshuB74940](https://x.com/PriyanshuB74940)
+- Twitter: [https://x.com/0xAarohi](https://x.com/0xAarohi)
 - Telegram: [https://t.me/priyanshu123bharti](https://t.me/priyanshu123bharti)
-- Discord: [https://discord.gg/aarohi04462](https://discord.gg/aarohi04462)
 - Calendar: [https://cal.com/priyanshu-bharti-oubnjc](https://cal.com/priyanshu-bharti-oubnjc)
 `;

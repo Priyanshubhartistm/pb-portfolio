@@ -7,15 +7,10 @@ import { ExperienceItem } from "./components/ExperienceItem";
 import { GithubGraph } from "./components/GithubGraph";
 import { TechStack } from "./components/TechStack";
 import { ProjectCard } from "./components/ProjectCard";
+import { projects } from "./data/projects";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
-
-const DiscordIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-    <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1971.3728.2914a.077.077 0 01-.0066.1277 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z" />
-  </svg>
-);
 
 export default function Home() {
   const [time, setTime] = useState<string>("");
@@ -244,11 +239,11 @@ export default function Home() {
                className="mb-10 w-full space-y-4 text-left text-base leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg md:text-xl"
             >
               <p>
-                A full-stack developer and <a href="" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-indigo-500 transition-colors">cloud enthusiast</a> with deep experience in open source.
+                An open-source developer building on Bitcoin and Nostr.
               </p>
               <p>
                 I love building products that solve real problems and make people's lives easier. 
-                <b className="text-gray-900 dark:text-white"> Building scalable web applications with full-stack and blockchain technologies. </b>       
+                <b className="text-gray-900 dark:text-white"> Contributing to Bitcoin, Lightning and Nostr infrastructure — from relays to protocol-level code. </b>
               </p>
             </motion.div>
 
@@ -280,12 +275,14 @@ export default function Home() {
               </h2>
               <div className="space-y-12">
                 <ExperienceItem
-                  title="Nostream"
-                  role="Open Source Contributor"
+                  title="Bitshala Fellowship — Nostream"
+                  role="Open Source Fellow"
                   collapsible={true}
                 >
                   <div className="space-y-2">
                     <p>Duration: April 2026 – Present</p>
+                    <p>One of 5 fellows selected across India for Bitshala&apos;s 6-month Bitcoin/Nostr open-source fellowship.</p>
+                    <p>Implementing NIP-77 (negentropy set reconciliation) for the PostgreSQL backend.</p>
                     <p>Working on nostream, a popular Nostr Relay written in TypeScript.</p>
                     <p>Building features like I2P support, Redis configuration, and query optimization.</p>
                     <p>Handling WebSocket connections and event processing for the relay.</p>
@@ -304,50 +301,6 @@ export default function Home() {
                     <p>Collaborated with experienced Bitcoin Core developers and the global open-source community.</p>
                     <p>Submitted and reviewed code contributions following industry-standard Git workflows and open-source best practices.</p>
                     <p>Gained deep understanding of Bitcoin's architecture, cryptography, and decentralized systems.</p>
-                  </div>
-                </ExperienceItem>
-
-                <ExperienceItem
-                  title="Google Cloud Arcade 2025"
-                  role="Cloud Program Facilitator | Remote"
-                  collapsible={true}
-                  link=""
-                >
-                  <div className="space-y-2">
-                    <p>Facilitated cloud learning programs for 700+ developers, focusing on GCP services and DevOps practices.</p>
-                    <p>Conducted hands-on labs on <b>GKE, Cloud Run, Cloud Functions, and Terraform</b>.</p>
-                    <p>Mentored participants on <b>CI/CD pipelines, containerization, and infrastructure as code</b>.</p>
-                    <p>Supported learners in achieving <b>Google Cloud certifications</b> through structured guidance.</p>
-                    <p>Collaborated with global teams to improve curriculum and learning outcomes.</p>
-                  </div>
-                
-                </ExperienceItem>
-
-                <ExperienceItem
-                  title="Microsoft Learn Student Ambassador (MLSA)"
-                  role="Student Technology Ambassador"
-                  collapsible={true}
-                  link=""
-                >
-                  <div className="space-y-2">
-                    <p>Represented Microsoft’s global student developer community by promoting technical learning and peer collaboration.</p>
-                    <p>Organized and led workshops, hackathons, and tech talks on Microsoft technologies such as Azure, .NET, and Power Platform.</p>
-                    <p>Created educational content including blog posts, tutorials, and videos to share knowledge and best practices.</p>
-                    <p>Collaborated with other student ambassadors and Microsoft teams to drive community engagement and growth.</p>
-                    <p>Actively contributed to building a strong student tech community by sharing resources and learning opportunities.</p>
-                  </div>
-                </ExperienceItem>
-
-                <ExperienceItem
-                  title="Government Program Contributor"
-                  role="Technology & Systems Support"
-                  collapsible={true}
-                >
-                  <div className="space-y-2">
-                    <p>Contributed to technology-driven initiatives under a government-led digital program.</p>
-                    <p>Provided technical support for system implementations and digital transformation projects.</p>
-                    <p>Assisted in the development and deployment of digital solutions to enhance public services.</p>
-                    <p>Collaborated with cross-functional teams to ensure successful project execution and delivery.</p>
                   </div>
                 </ExperienceItem>
               </div>
@@ -370,43 +323,6 @@ export default function Home() {
                     <p>Worked on complex decentralized system architectures, I2P integrations, and Lightning Network testings.</p>
                   </div>
                 </ExperienceItem>
-
-                <ExperienceItem
-                  title="Full-Stack & UI/UX"
-                  role="Palisadoes Foundation, Cal.com & Twenty"
-                  collapsible={true}
-                  link="https://github.com/PalisadoesFoundation/talawa-admin/pulls?q=is%3Apr+author%3APriyanshubhartistm+is%3Aclosed"
-                >
-                  <div className="space-y-2">
-                    <p>Successfully merged 23+ PRs across <b className="text-gray-800 dark:text-gray-200">talawa, talawa-api</b>, and <b className="text-gray-800 dark:text-gray-200">talawa-admin</b> by Palisadoes Foundation.</p>
-                    <p>Contributed to leading full-stack platforms like <b className="text-gray-800 dark:text-gray-200">cal.com</b> (scheduling infrastructure) and <b className="text-gray-800 dark:text-gray-200">twenty</b> (open-source CRM).</p>
-                    <p>Improved React/Next.js state management, solved responsive UI bugs, and enhanced core GraphQL/REST API features.</p>
-                  </div>
-                </ExperienceItem>
-
-                <ExperienceItem
-                  title="DevOps & Infrastructure Tools"
-                  role="Kubernetes, CI/CD pipelines & Testing"
-                  collapsible={true}
-                >
-                  <div className="space-y-2">
-                    <p>Engaged with modern DevOps tools and cloud-native infrastructure including <b className="text-gray-800 dark:text-gray-200">daytona</b>, <b className="text-gray-800 dark:text-gray-200">keploy</b>, and <b className="text-gray-800 dark:text-gray-200">microcks-cli</b>.</p>
-                    <p>Contributed to advanced container orchestrations with <b className="text-gray-800 dark:text-gray-200">kubestellar</b> and <b className="text-gray-800 dark:text-gray-200">kubeslice-controller</b>.</p>
-                    <p>Optimized Docker images, automated GitHub Actions testing workflows, and stabilized core pipeline deployments.</p>
-                  </div>
-                </ExperienceItem>
-
-                <ExperienceItem
-                  title="Documentation & Open-Source Community"
-                  role="Technical Guide & Maintainer Initiatives"
-                  collapsible={true}
-                >
-                  <div className="space-y-2">
-                    <p>Enhanced developer onboarding experiences for Data tools like <b className="text-gray-800 dark:text-gray-200">OpenMetadata</b> and <b className="text-gray-800 dark:text-gray-200">sktime</b>.</p>
-                    <p>Authored extensive markdown documentations, refined API guidelines, and created clear structures in <b className="text-gray-800 dark:text-gray-200">developer-docs</b>.</p>
-                    <p>Actively reviewed community PRs, mentored newcomers via Hacktoberfest, and resolved active technical issues.</p>
-                  </div>
-                </ExperienceItem>
               </div>
             </motion.div>
 
@@ -425,7 +341,7 @@ export default function Home() {
                 Tech Stack
               </h2>
               <p className="mb-8 text-lg text-gray-600 dark:text-gray-400">
-                I&apos;m a Technically well. In this skill&apos;s the core stack I&apos;ve spent the most time with:
+                Here&apos;s the stack I work with most:
               </p>
               <TechStack />
             </motion.div>
@@ -442,117 +358,14 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.2 }}
                 className="grid gap-6 sm:grid-cols-1 md:grid-cols-2"
               >
-                <motion.div variants={projectItem}>
-                  <ProjectCard
-                    title="bitcoin-prices"
-                    description="Built a real-time Bitcoin price tracker with live updates and animated UI. Shows price metrics, charts, and cards with dark/light mode support. Handles offline state and auto-retries failed API calls."
-                    techStack={["TypeScript", "React", "HTML", "CSS"]}
-                    githubUrl="https://github.com/Priyanshubhartistm/bitcoin-prices"
-                    liveUrl="https://completion-task.vercel.app/"
-                  />
-                </motion.div>
-                <motion.div variants={projectItem}>
-                  <ProjectCard
-                    title="Cryptoverse - Cryptocurrency Tracker"
-                    description="Real-time cryptocurrency tracking app with live prices, market caps, and trading volumes. Features advanced search, interactive charts with multiple time ranges, exchange insights, latest crypto news, and a beautiful responsive UI with smooth animations."
-                    techStack={["React", "JavaScript", "CSS", "Crypto API"]}
-                    githubUrl="https://github.com/Priyanshubhartistm/Cryptocurrency-App"
-                    liveUrl="https://priyanshubhartistm.github.io/Cryptocurrency-Tracker/"
-                  />
-                </motion.div>
-                <motion.div variants={projectItem}>
-                  <ProjectCard
-                    title="Juice🍊Factory Website"
-                    description="A static web project showcasing creative frontend design with smooth animations and responsive layouts. Built to demonstrate modern web design principles with a fruit-themed juice factory concept."
-                    techStack={["HTML", "CSS", "JavaScript"]}
-                    githubUrl="https://github.com/Priyanshubhartistm/juice-factory"
-                    liveUrl="https://priyanshubhartistm.github.io/juice-factory/"
-                  />
-                </motion.div>
+                {projects.map((project) => (
+                  <motion.div key={project.title} variants={projectItem}>
+                    <ProjectCard {...project} />
+                  </motion.div>
+                ))}
               </motion.div>
             </motion.div>
   
-
-            {/* Writings & Blogs Section */}
-            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
-              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-                Writings & Blogs
-              </h2>
-              <p className="w-full text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                I write my thoughts on{" "}
-                <a
-                  href="https://medium.com/@bhartipriyanshustm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black dark:text-white underline underline-offset-4 transition-colors hover:text-gray-600 dark:hover:text-gray-300"
-                >
-                  Medium
-                </a>{" "}
-                      Write technical blogs on cloud computing and modern development topics on Medium.              </p>
-            </motion.div>
-
-            {/* Library Section */}
-            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
-              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-                Life:) My Library
-              </h2>
-
-              {/* Dev Subsection */}
-              <div className="mb-8">
-                <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-600">
-                  Doing for feel good
-                </h3>
-                <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                  {[
-                    { title: "Coding", author: "In open source" },
-                    { title: "Cooking: The Art of Living", author: "Best time for me" },
-                    { title: "Teaching", author: "If I'm not a coder then definitely a teacher" },
-                    { title: "Editing", author: "My very 1st source of earning" },
-                    { title: "Dance", author: "Without dancing I can't imagine a holiday" },
-                    { title: "Read Books", author: "Specially some deep reads related to real - life" }
-                  ].map((book) => (
-                    <div key={book.title} className="group flex flex-col gap-1 transition-all">
-                      <span className="text-sm font-medium text-black dark:text-white group-hover:underline underline-offset-4 decoration-gray-200 dark:decoration-gray-800 transition-all">
-                        {book.title}
-                      </span>
-                      <span className="text-xs text-gray-400 dark:text-gray-500">
-                        {book.author}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Note */}
-              <p className="mt-6 text-xs italic text-gray-400 dark:text-gray-500">
-                *I do many more, but these are some of my favorite activities that keep me energized and inspired.
-              </p>
-            </motion.div>
-
-            {/* Thing about me Section */}
-            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
-              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-                Thing about me
-              </h2>
-              <div className="space-y-6">
-                <p className="w-full text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                    Outside of coding and system design, I enjoy learning through communities and real-world experiences. My journey in Computer Science has taught me the value of collaboration, open-source development, and continuous growth.</p>
-
-                <div className="flex justify-center">
-                  <div className="relative h-[250px] w-full max-w-sm grayscale hover:grayscale-0 transition-all duration-700 sm:h-[350px]" style={{ maskImage: "radial-gradient(circle, black 40%, transparent 95%)", WebkitMaskImage: "radial-gradient(circle, black 40%, transparent 95%)" }}>
-                    <Image
-                      src="/casual.png"
-                      alt="Casual photo"
-                      fill
-                      className="object-contain object-center"
-                    />
-                  </div>
-                </div>
-
-                <p className="w-full text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                        I am passionate about building scalable digital solutions and contributing to projects that create real impact. I believe curiosity and consistency are the foundation of meaningful innovation.                </p>
-              </div>
-            </motion.div>
 
             {/* Get in Touch Section */}
             <motion.div {...sectionMotion} className="mb-16 w-full text-left">
@@ -602,7 +415,7 @@ export default function Home() {
           <Linkedin className="h-5 w-5" />
         </a>
         <a
-          href="https://x.com/PriyanshuB74940"
+          href="https://x.com/0xAarohi"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors hover:scale-110"
@@ -617,15 +430,6 @@ export default function Home() {
 >
   <FaTelegram className="h-5 w-5" />
 </a>
-
-        <a
-          href="https://discord.gg/aarohi04462"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors hover:scale-110"
-        >
-          <DiscordIcon className="h-5 w-5" />
-        </a>
         <a
           href="https://cal.com/priyanshu-bharti-oubnjc"
           target="_blank"

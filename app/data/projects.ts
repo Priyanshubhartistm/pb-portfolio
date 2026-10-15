@@ -14,4 +14,11 @@ export const projects: Project[] = [
     techStack: ["TypeScript", "Nostr", "Bitcoin", "Lightning"],
     githubUrl: "https://github.com/Priyanshubhartistm/reelstr",
   },
+  {
+    title: "Slipstream",
+    description:
+      "On-chain perpetual-futures CLOB on Solana — order matching at rollup speed inside a MagicBlock Ephemeral Rollup, with custody and settlement kept on L1. Limit/market orders, up to 20× leverage, funding and liquidations. Deployed on Solana devnet.",
+    techStack: ["Rust", "TypeScript", "Solana", "MagicBlock"],
+    githubUrl: "https://github.com/Priyanshubhartistm/slipstream",
+  },
 ];

@@ -280,6 +280,7 @@ export default function Home() {
                   collapsible={true}
                 >
                   <div className="space-y-2">
+                    <p>Duration: Oct 2026 – Present · Remote · Ontario, Canada</p>
                     <p>Maintainer of nostream, a popular Nostr Relay written in TypeScript.</p>
                     <p>Listed as a maintainer on the project&apos;s community page.</p>
                   </div>

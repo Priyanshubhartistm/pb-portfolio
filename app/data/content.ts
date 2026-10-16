@@ -10,6 +10,11 @@ Contributing to Bitcoin, Lightning and Nostr infrastructure — from relays to p
 ## Experience
 
 ### nostream
+**Maintainer**, Oct 2026 - Present · Remote · Ontario, Canada
+Maintainer of nostream, a popular Nostr Relay written in TypeScript.
+Listed as a maintainer on the project's community page.
+
+### nostream
 **Software Engineer · Internship**, Jul 2026 - Present
 Working on nostream, a popular Nostr Relay written in TypeScript.
 Implementing NIP-77 (negentropy set reconciliation) for the PostgreSQL backend.

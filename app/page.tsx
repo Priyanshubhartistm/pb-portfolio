@@ -239,11 +239,11 @@ export default function Home() {
                className="mb-10 w-full space-y-4 text-left text-base leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg md:text-xl"
             >
               <p>
-                An open-source developer building on Bitcoin and Nostr.
+                Web3 and Bitcoin developer — Bitshala Fellow and Nostream maintainer.
               </p>
               <p>
-                I love building products that solve real problems and make people's lives easier. 
-                <b className="text-gray-900 dark:text-white"> Contributing to Bitcoin, Lightning and Nostr infrastructure — from relays to protocol-level code. </b>
+                I build open, permissionless systems that give people back control of their money and their data.
+                <b className="text-gray-900 dark:text-white"> Working across Bitcoin, Lightning and Nostr — from relay internals to protocol-level code. </b>
               </p>
             </motion.div>
 
@@ -274,6 +274,18 @@ export default function Home() {
                 Experience
               </h2>
               <div className="space-y-12">
+                <ExperienceItem
+                  title="nostream"
+                  role="Maintainer"
+                  collapsible={true}
+                >
+                  <div className="space-y-2">
+                    <p>Duration: Oct 2026 – Present · Remote · Ontario, Canada</p>
+                    <p>Maintainer of nostream, a popular Nostr Relay written in TypeScript.</p>
+                    <p>Listed as a maintainer on the project&apos;s community page.</p>
+                  </div>
+                </ExperienceItem>
+
                 <ExperienceItem
                   title="nostream"
                   role="Software Engineer · Internship"

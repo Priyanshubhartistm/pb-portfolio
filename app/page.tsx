@@ -239,11 +239,11 @@ export default function Home() {
                className="mb-10 w-full space-y-4 text-left text-base leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg md:text-xl"
             >
               <p>
-                An open-source developer building on Bitcoin and Nostr.
+                Web3 and Bitcoin developer — Bitshala Fellow and Nostream maintainer.
               </p>
               <p>
-                I love building products that solve real problems and make people's lives easier. 
-                <b className="text-gray-900 dark:text-white"> Contributing to Bitcoin, Lightning and Nostr infrastructure — from relays to protocol-level code. </b>
+                I build open, permissionless systems that give people back control of their money and their data.
+                <b className="text-gray-900 dark:text-white"> Working across Bitcoin, Lightning and Nostr — from relay internals to protocol-level code. </b>
               </p>
             </motion.div>
 

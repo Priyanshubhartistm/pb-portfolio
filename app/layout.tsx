@@ -12,7 +12,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "Priyanshu Bharti",
-  description: "Priyanshu Bharti — open-source developer building on Bitcoin and Nostr.",
+  description: "Priyanshu Bharti — Web3 and Bitcoin developer, Bitshala Fellow, and Nostream maintainer.",
 };
 
 export default function RootLayout({

@@ -276,12 +276,23 @@ export default function Home() {
               <div className="space-y-12">
                 <ExperienceItem
                   title="nostream"
-                  role="Maintainer · Software Engineer (Internship)"
+                  role="Maintainer"
+                  collapsible={true}
+                >
+                  <div className="space-y-2">
+                    <p>Maintainer of nostream, a popular Nostr Relay written in TypeScript.</p>
+                    <p>Listed as a maintainer on the project&apos;s community page.</p>
+                  </div>
+                </ExperienceItem>
+
+                <ExperienceItem
+                  title="nostream"
+                  role="Software Engineer · Internship"
                   collapsible={true}
                 >
                   <div className="space-y-2">
                     <p>Duration: Jul 2026 – Present · Remote</p>
-                    <p>Maintainer of nostream, a popular Nostr Relay written in TypeScript.</p>
+                    <p>Working on nostream, a popular Nostr Relay written in TypeScript.</p>
                     <p>Implementing NIP-77 (negentropy set reconciliation) for the PostgreSQL backend.</p>
                     <p>Building features like I2P support, Redis configuration, and query optimization.</p>
                     <p>Handling WebSocket connections and event processing for the relay.</p>

@@ -2,18 +2,20 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ExperienceItemProps {
     title: string;
     role: string;
     children: React.ReactNode;
+    /** When set, this is always visible and `children` is shown only when expanded. */
+    preview?: React.ReactNode;
     collapsible?: boolean;
     link?: string;
     collapsedHeight?: string;
 }
 
-export function ExperienceItem({ title, role, children, collapsible = false, link, collapsedHeight = "max-h-20" }: ExperienceItemProps) {
+export function ExperienceItem({ title, role, children, preview, collapsible = false, link, collapsedHeight = "max-h-20" }: ExperienceItemProps) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
@@ -37,14 +39,37 @@ export function ExperienceItem({ title, role, children, collapsible = false, lin
                 </span>
             </div>
 
-            <div className={`relative max-w-2xl text-sm leading-relax text-gray-600 dark:text-gray-400 transition-all duration-500 ease-in-out ${!isExpanded && collapsible ? `${collapsedHeight} overflow-hidden` : ""}`}>
-                <div className="space-y-2 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors">
-                    {children}
+            {preview ? (
+                <div className="relative max-w-2xl text-sm leading-relax text-gray-600 dark:text-gray-400">
+                    <div className="space-y-2 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors">
+                        {preview}
+                    </div>
+                    <AnimatePresence initial={false}>
+                        {isExpanded && (
+                            <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.4, ease: "easeInOut" }}
+                                className="overflow-hidden"
+                            >
+                                <div className="space-y-2 pt-2 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors">
+                                    {children}
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
-                {collapsible && !isExpanded && (
-                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-black to-transparent pointer-events-none" />
-                )}
-            </div>
+            ) : (
+                <div className={`relative max-w-2xl text-sm leading-relax text-gray-600 dark:text-gray-400 transition-all duration-500 ease-in-out ${!isExpanded && collapsible ? `${collapsedHeight} overflow-hidden` : ""}`}>
+                    <div className="space-y-2 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors">
+                        {children}
+                    </div>
+                    {collapsible && !isExpanded && (
+                        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-black to-transparent pointer-events-none" />
+                    )}
+                </div>
+            )}
 
             {collapsible && (
                 <button

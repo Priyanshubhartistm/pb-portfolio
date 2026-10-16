@@ -12,6 +12,24 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 
+const PR_BASE = "https://github.com/cameri/nostream/pull/";
+const linkClass = "underline underline-offset-4 hover:text-indigo-500 transition-colors";
+
+const PRs = ({ nums }: { nums: number[] }) => (
+  <>
+    (
+    {nums.map((n, i) => (
+      <span key={n}>
+        {i > 0 && ", "}
+        <a href={`${PR_BASE}${n}`} target="_blank" rel="noopener noreferrer" className={linkClass}>
+          #{n}
+        </a>
+      </span>
+    ))}
+    )
+  </>
+);
+
 export default function Home() {
   const [time, setTime] = useState<string>("");
 
@@ -275,41 +293,40 @@ export default function Home() {
               </h2>
               <div className="space-y-12">
                 <ExperienceItem
-                  title="nostream"
+                  title="Nostream"
                   role="Maintainer"
                   collapsible={true}
+                  preview={
+                    <>
+                      <p>Duration: Apr 2026 – Present · Remote</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-500">
+                        Contributor (Apr 2026) → Software Engineer Intern (Jul 2026) → Maintainer (Oct 2026)
+                      </p>
+                      <p>Maintainer of Nostream, a production Nostr relay in TypeScript, listed on <a href="https://nostream.dev/community" target="_blank" rel="noopener noreferrer" className={linkClass}>nostream.dev/community</a>. 34 merged PRs and ~12k lines of code since April 2026.</p>
+                      <p>NIP-77 negentropy sync: built set reconciliation for the PostgreSQL event store, from the reconciliation core and sorted event-id query <PRs nums={[809]} /> to the NEG-OPEN / NEG-MSG / NEG-CLOSE wire protocol <PRs nums={[818]} /> and NIP-11 advertisement with admin-console settings <PRs nums={[830]} />.</p>
+                      <p>Web of Trust & spam resistance: built a Web of Trust graph service on NIP-02 follow distance <PRs nums={[745]} />. Used it for WoT-weighted NIP-56 content reporting that auto-hides events matching actionable reports <PRs nums={[770, 786, 788]} />, and for WoT-distance-based PoW reductions <PRs nums={[779]} /> on top of relay-load-aware adaptive PoW difficulty <PRs nums={[756]} />.</p>
+                    </>
+                  }
                 >
-                  <div className="space-y-2">
-                    <p>Duration: Oct 2026 – Present · Remote · Ontario, Canada</p>
-                    <p>Maintainer of nostream, a popular Nostr Relay written in TypeScript.</p>
-                    <p>Listed as a maintainer on the project&apos;s community page.</p>
-                  </div>
-                </ExperienceItem>
-
-                <ExperienceItem
-                  title="nostream"
-                  role="Software Engineer · Internship"
-                  collapsible={true}
-                >
-                  <div className="space-y-2">
-                    <p>Duration: Jul 2026 – Present · Remote</p>
-                    <p>Working on nostream, a popular Nostr Relay written in TypeScript.</p>
-                    <p>Implementing NIP-77 (negentropy set reconciliation) for the PostgreSQL backend.</p>
-                    <p>Building features like I2P support, Redis configuration, and query optimization.</p>
-                    <p>Handling WebSocket connections and event processing for the relay.</p>
-                  </div>
+                  <p>Data Vending Machines (NIP-90 / NIP-89): designed the DVM job pipeline end to end, covering the persistence layer <PRs nums={[727]} />, worker registry and process topology <PRs nums={[721]} />, job-request event handling <PRs nums={[729]} />, dispatch to worker processes <PRs nums={[734]} />, and NIP-89 handler recommendation kinds <PRs nums={[737]} />.</p>
+                  <p>Relay reliability: fixed in-flight subscription streams leaking after client disconnect <PRs nums={[715]} />, duplicate events in tag-filter subscriptions <PRs nums={[694]} />, an un-awaited Redis call in the cache adapter <PRs nums={[684]} />, rate-limit window over-counting <PRs nums={[686]} />, a NIP-11 crash when payments are unset <PRs nums={[682]} />, expiration timestamp edge cases <PRs nums={[708]} />, and a CLI hang when the database is unreachable <PRs nums={[740]} />.</p>
+                  <p>Tooling & tests: migrated linting/formatting to Biome <PRs nums={[452]} /> and logging to pino <PRs nums={[511]} />, upgraded CI artifact actions <PRs nums={[400]} />, and added integration coverage for NIP-04, NIP-22 and NIP-40 <PRs nums={[562, 547, 528]} />.</p>
                 </ExperienceItem>
 
                 <ExperienceItem
                   title="Bitshala"
                   role="Dev Fellow"
                   collapsible={true}
+                  preview={
+                    <>
+                      <p>Duration: Aug 2026 – Present · Remote</p>
+                      <p>One of 40 fellows selected across India for Bitshala&apos;s 6-month Bitcoin/Nostr open-source fellowship.</p>
+                      <p>Fellowship project: Nostream, mentored by its creator <a href="https://github.com/cameri" target="_blank" rel="noopener noreferrer" className={linkClass}>@cameri</a>.</p>
+                      <p>Completed Months 1–2. Month 3 milestone is NIP-77 negentropy sync for the PostgreSQL backend, with 3 PRs already merged <PRs nums={[809, 818, 830]} />.</p>
+                    </>
+                  }
                 >
-                  <div className="space-y-2">
-                    <p>Duration: Aug 2026 – Present · Remote</p>
-                    <p>One of 40 fellows selected across India for Bitshala&apos;s 6-month Bitcoin/Nostr open-source fellowship.</p>
-                    <p>Focus: Bitcoin and Back-End Web Development.</p>
-                  </div>
+                  <p>Focus areas: Bitcoin, Nostr protocol design, and back-end systems.</p>
                 </ExperienceItem>
 
                 <ExperienceItem

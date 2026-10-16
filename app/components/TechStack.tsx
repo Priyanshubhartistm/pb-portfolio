@@ -27,40 +27,27 @@ const categories = [
     {
         name: "Backend & DB",
         skills: [
-            { name: "FastAPI", slug: "fastapi" },
             { name: "Node.js", slug: "nodedotjs" },
             { name: "PostgreSQL", slug: "postgresql" },
-            { name: "MongoDB", slug: "mongodb" },
             { name: "Redis", slug: "redis" },
-            { name: "FireBase", slug: "firebase" },
         ]
     },
     {
         name: "Infra & Tools",
         skills: [
             { name: "Docker", slug: "docker" },
-            { name: "Google Cloud", slug: "googlecloud" },
-            { name: "Vercel", slug: "vercel" },
             { name: "Git", slug: "git" },
             { name: "GitHub", slug: "github" },
             { name: "Linux", slug: "linux" },
-            { name: "Nginx", slug: "nginx" },
         ]
     },
     {
         name: "Blockchain",
         skills: [
+            { name: "Bitcoin", slug: "bitcoin" },
             { name: "Ethereum", slug: "ethereum" },
             { name: "Solidity", slug: "solidity" },
             { name: "Web3.js", slug: "web3dotjs" },
-        ]
-    },
-    {
-        name: "Operating Systems",
-        skills: [
-            { name: "Windows", slug: "windows" },
-            { name: "Linux", slug: "linux" },
-            { name: "Ubuntu", slug: "ubuntu" },
         ]
     }
 ];

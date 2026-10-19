@@ -8,11 +8,11 @@ const categories = [
     {
         name: "Languages",
         skills: [
-            { name: "Go", slug: "go" },
-            { name: "Python", slug: "python" },
             { name: "TypeScript", slug: "typescript" },
             { name: "JavaScript", slug: "javascript" },
-            { name: "C++", slug: "cplusplus" },
+            { name: "Go", slug: "go" },
+            { name: "Rust", slug: "rust" },
+            { name: "Java", slug: "openjdk" },
         ]
     },
     {
@@ -21,14 +21,16 @@ const categories = [
             { name: "React", slug: "react" },
             { name: "Next.js", slug: "nextdotjs" },
             { name: "Tailwind CSS", slug: "tailwindcss" },
-            
         ]
     },
     {
         name: "Backend & DB",
         skills: [
             { name: "Node.js", slug: "nodedotjs" },
+            { name: "Express", slug: "express" },
+            { name: "Spring Boot", slug: "springboot" },
             { name: "PostgreSQL", slug: "postgresql" },
+            { name: "SQLite", slug: "sqlite" },
             { name: "Redis", slug: "redis" },
         ]
     },
@@ -36,6 +38,7 @@ const categories = [
         name: "Infra & Tools",
         skills: [
             { name: "Docker", slug: "docker" },
+            { name: "Kubernetes", slug: "kubernetes" },
             { name: "Git", slug: "git" },
             { name: "GitHub", slug: "github" },
             { name: "Linux", slug: "linux" },
@@ -45,9 +48,8 @@ const categories = [
         name: "Blockchain",
         skills: [
             { name: "Bitcoin", slug: "bitcoin" },
-            { name: "Ethereum", slug: "ethereum" },
-            { name: "Solidity", slug: "solidity" },
-            { name: "Web3.js", slug: "web3dotjs" },
+            { name: "Lightning", slug: "lightning" },
+            { name: "Solana", slug: "solana" },
         ]
     }
 ];

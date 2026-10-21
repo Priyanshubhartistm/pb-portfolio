@@ -7,10 +7,12 @@ import { ExperienceItem } from "./components/ExperienceItem";
 import { GithubGraph } from "./components/GithubGraph";
 import { TechStack } from "./components/TechStack";
 import { ProjectCard } from "./components/ProjectCard";
-import { projects } from "./data/projects";
+import { projects, moreProjects } from "./data/projects";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
+
+const linkClass = "underline underline-offset-4 hover:text-indigo-500 transition-colors";
 
 export default function Home() {
   const [time, setTime] = useState<string>("");
@@ -239,11 +241,11 @@ export default function Home() {
                className="mb-10 w-full space-y-4 text-left text-base leading-relaxed text-gray-600 dark:text-gray-400 sm:text-lg md:text-xl"
             >
               <p>
-                Web3 and Bitcoin developer — Bitshala Fellow and Nostream maintainer.
+                Web3 and Bitcoin developer. Bitshala Fellow and nostream maintainer.
               </p>
               <p>
                 I build open, permissionless systems that give people back control of their money and their data.
-                <b className="text-gray-900 dark:text-white"> Working across Bitcoin, Lightning and Nostr — from relay internals to protocol-level code. </b>
+                <b className="text-gray-900 dark:text-white"> My work runs across Bitcoin, Lightning and Nostr, from relay internals to protocol-level code. </b>
               </p>
             </motion.div>
 
@@ -277,55 +279,58 @@ export default function Home() {
                 <ExperienceItem
                   title="nostream"
                   role="Maintainer"
-                  collapsible={true}
+                  preview={
+                    <>
+                      <p>Duration: Oct 2026 to present · Remote</p>
+                      <p>Maintainer of <a href="https://github.com/cameri/nostream" target="_blank" rel="noopener noreferrer" className={linkClass}>nostream</a>, a widely used Nostr relay written in TypeScript with over 800 GitHub stars. Listed as a maintainer on the project&apos;s community page at <a href="https://nostream.dev/community" target="_blank" rel="noopener noreferrer" className={linkClass}>nostream.dev</a>, alongside the creator. I review and merge contributions, and I maintain the contributor documentation and security policy.</p>
+                    </>
+                  }
                 >
-                  <div className="space-y-2">
-                    <p>Duration: Oct 2026 – Present · Remote · Ontario, Canada</p>
-                    <p>Maintainer of nostream, a popular Nostr Relay written in TypeScript.</p>
-                    <p>Listed as a maintainer on the project&apos;s community page.</p>
-                  </div>
+                  {null}
                 </ExperienceItem>
 
                 <ExperienceItem
                   title="nostream"
-                  role="Software Engineer · Internship"
+                  role="Software Engineer (Internship)"
                   collapsible={true}
+                  preview={
+                    <>
+                      <p>Duration: Apr 2026 to present · Remote</p>
+                      <p>I build protocol features and fix production bugs in nostream, a Nostr relay running on Node.js, PostgreSQL and Redis. I&apos;ve merged 38 pull requests.</p>
+                      <p>NIP-77 (negentropy set reconciliation): built the reconciliation core, the NEG-OPEN, NEG-MSG and NEG-CLOSE wire protocol, and the NIP-11 advertisement with admin console settings.</p>
+                      <p>Data vending machines (NIP-90 and NIP-89): built the worker registry and process topology, job persistence with its migration and repository, request handling, dispatch of pending jobs to worker processes, and handler recommendation events.</p>
+                    </>
+                  }
                 >
-                  <div className="space-y-2">
-                    <p>Duration: Jul 2026 – Present · Remote</p>
-                    <p>Working on nostream, a popular Nostr Relay written in TypeScript.</p>
-                    <p>Implementing NIP-77 (negentropy set reconciliation) for the PostgreSQL backend.</p>
-                    <p>Building features like I2P support, Redis configuration, and query optimization.</p>
-                    <p>Handling WebSocket connections and event processing for the relay.</p>
-                  </div>
+                  <p>Spam and abuse resistance: built a web-of-trust graph service based on NIP-02 follow distance, adaptive proof-of-work that scales with relay load, and proof-of-work reductions for accounts close in the trust graph. Added trust-weighted NIP-56 reports and hiding of events that match an actionable report.</p>
+                  <p>WebSocket and event handling: fixed duplicate events in tag-filter subscriptions, subscription streams left open after client disconnects, and rate-limit windows still being hit after a client was already limited. Fixed a NIP-11 crash when payment settings were absent, a missing await in the Redis adapter, and the CLI hanging when the database was unreachable.</p>
+                  <p>Tooling and tests: migrated linting and formatting to Biome and logging to pino. Added NIP-04, NIP-22 and NIP-40 integration tests, a script to wipe the events table, and the data model for subscription payments.</p>
                 </ExperienceItem>
 
                 <ExperienceItem
                   title="Bitshala"
                   role="Dev Fellow"
-                  collapsible={true}
+                  preview={
+                    <>
+                      <p>Duration: Aug 2026 to present · Remote</p>
+                      <p>Fellow in Bitshala&apos;s six-month Bitcoin open-source fellowship. Bitshala is an India-based Bitcoin education initiative. My work covers Bitcoin and Nostr infrastructure and back-end web development.</p>
+                    </>
+                  }
                 >
-                  <div className="space-y-2">
-                    <p>Duration: Aug 2026 – Present · Remote</p>
-                    <p>One of 40 fellows selected across India for Bitshala&apos;s 6-month Bitcoin/Nostr open-source fellowship.</p>
-                    <p>Focus: Bitcoin and Back-End Web Development.</p>
-                  </div>
+                  {null}
                 </ExperienceItem>
 
                 <ExperienceItem
                   title="Summer of Bitcoin"
-                  role="Developer · Internship"
-                  collapsible={true}
+                  role="Developer (Internship)"
+                  preview={
+                    <>
+                      <p>Duration: Feb to Aug 2026 · Remote</p>
+                      <p>Contributed to nostream through the Summer of Bitcoin 2026 program. Worked in the project&apos;s pull-request review workflow, shipping tests, tooling migrations and bug fixes, and learned the Nostr protocol and relay architecture from reading and extending production code.</p>
+                    </>
+                  }
                 >
-                  <div className="space-y-2">
-                    <p>Duration: Feb 2026 – Aug 2026 · Remote</p>
-                    <p>Contributed to Nostream, a production-grade Nostr Relay, during the Summer of Bitcoin 2026 program.</p>
-                    <p>Contributed as a developer to open-source Bitcoin projects under the Summer of Bitcoin program.</p>
-                    <p>Worked on real-world Bitcoin/Lightning Network codebases, gaining hands-on experience with blockchain protocols.</p>
-                    <p>Collaborated with experienced Bitcoin Core developers and the global open-source community.</p>
-                    <p>Submitted and reviewed code contributions following industry-standard Git workflows and open-source best practices.</p>
-                    <p>Gained deep understanding of Bitcoin's architecture, cryptography, and decentralized systems.</p>
-                  </div>
+                  {null}
                 </ExperienceItem>
               </div>
             </motion.div>
@@ -337,15 +342,17 @@ export default function Home() {
               </h2>
               <div className="space-y-12">
                 <ExperienceItem
-                  title="Web3 & Blockchain Protocol"
-                  role="Bitcoin Core, Ethereum & Nostr Ecosystem"
-                  collapsible={true}
+                  title="Nostr and Bitcoin infrastructure"
+                  role="nostream & ContextVM"
                 >
-                  <div className="space-y-2">
-                    <p>Contributed to major open-source blockchain repositories including <b className="text-gray-800 dark:text-gray-200">bitcoin-core</b>, <b className="text-gray-800 dark:text-gray-200">go-ethereum</b>, and <b className="text-gray-800 dark:text-gray-200">btcpayserver</b>.</p>
-                    <p>Actively developed features for <b className="text-gray-800 dark:text-gray-200">nostream</b> (Nostr Relay) and privacy-focused protocols like <b className="text-gray-800 dark:text-gray-200">fedimint</b> and <b className="text-gray-800 dark:text-gray-200">robosats</b>.</p>
-                    <p>Worked on complex decentralized system architectures, I2P integrations, and Lightning Network testings.</p>
-                  </div>
+                  <p>Active contributor to nostream (38 merged PRs) and to ContextVM (relatr-web and docs, 8 merged PRs), which builds on Nostr. My work covers protocol features, integration tests, tooling migrations and production bug fixes.</p>
+                </ExperienceItem>
+
+                <ExperienceItem
+                  title="Cloud-native open source"
+                  role="KubeEdge, Apicurio, Flatcar & more"
+                >
+                  <p>Merged contributions to KubeEdge (11 PRs, plus 3 on its website), Apicurio Registry (11), Flatcar (10), Talawa Admin (6), WasmEdge (4), Microcks CLI (2), Meshery (1) and KubeSlice Controller (1). Open PRs are in progress on KubeEdge (15), KubeSlice, Kmesh, Harbor CLI and tscircuit.</p>
                 </ExperienceItem>
               </div>
             </motion.div>
@@ -383,6 +390,26 @@ export default function Home() {
                 className="grid gap-6 sm:grid-cols-1 md:grid-cols-2"
               >
                 {projects.map((project) => (
+                  <motion.div key={project.title} variants={projectItem}>
+                    <ProjectCard {...project} />
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* More Projects Section */}
+            <motion.div {...sectionMotion} className="mb-16 w-full text-left">
+              <h2 className="mb-8 text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+                More Projects
+              </h2>
+              <motion.div
+                variants={projectStagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
+                className="grid gap-6 sm:grid-cols-1 md:grid-cols-2"
+              >
+                {moreProjects.map((project) => (
                   <motion.div key={project.title} variants={projectItem}>
                     <ProjectCard {...project} />
                   </motion.div>
